@@ -10,10 +10,8 @@ import java.util.Scanner;
 
 
 public class MainController {
-    public static void main(String[] args) {
 
-        String a= "aa";
-        int b = Integer.parseInt(a);
+    public static void main(String[] args) {
 
         SQLConnector sqlObj = new SQLConnector();
         SQLConnector.dbConnection();
@@ -25,6 +23,7 @@ public class MainController {
         System.out.println("this is CRUD test, all input are manual for testing purposes.");
 
         boolean loop = true;
+
         do {
             System.out.println("GayLord Casino User Management\n" +
                     "1: Create new account.\n" +
@@ -33,70 +32,87 @@ public class MainController {
                     "4: Delete an acount.\n" +
                     "5: Adjust winning\n" +
                     "0: to quit");
+            try {
+                int choice = scan.nextInt();
 
-            int choice = scan.nextInt();
+                switch (choice) {
+                    case (0): {
+                        loop = false;
+                        break;
+                    }
+                    case (1): {
+                        System.out.println("enter starting money");
+                        double money = scan.nextDouble();
+                        scan.nextLine();
+                        System.out.println("please enter idiot's name");
+                        String name = scan.nextLine();
+                        System.out.println("please enter idiot's address");
+                        String address = scan.nextLine();
 
-            switch (choice){
-                case(0): {
-                    loop = false;
-                    break;
-                }case(1): {
-                    System.out.println("enter starting money (2 decimals constraint not implemented)");
-                    double money = scan.nextDouble();
-                    scan.nextLine();
-                    System.out.println("please enter idiot's name");
-                    String name = scan.nextLine();
-                    System.out.println("please enter idiot's address");
-                    String address = scan.nextLine();
+                        suckerimpl.insertSucker(new SuckerService(name, money, address));
+                        System.out.println(name + " has been added!\n");
+                        break;
+                    }
+                    case (2): {
+                        System.out.println(suckerimpl.getAllSuckers());
+                        System.out.println();
+                        break;
+                    }
+                    case (3): {
+                        System.out.println("please enter their ID");
+                        int id = scan.nextInt();
+                        scan.nextLine();
+                        if(suckerimpl.retrieveSucker(id).getId()==0){
+                            System.out.println("user does not exists");
+                            break;
+                        }
+                        System.out.println("modify their money");
+                        double money = scan.nextDouble();
+                        scan.nextLine();
+                        System.out.println("modify their name");
+                        String name = scan.nextLine();
+                        System.out.println("modify their address");
+                        String address = scan.nextLine();
+                        System.out.println("modify their ban status");
+                        String ban = scan.next();
 
-                    suckerimpl.insertSucker(new SuckerService(name,money,address));
-                    System.out.println(name+" has been added!\n");
-                    break;
-                } case(2):{
-                    System.out.println(suckerimpl.getAllSuckers());
-                    System.out.println();
-                    break;
-                } case(3):{
-                    System.out.println("please enter their ID");
-                    int id = scan.nextInt();
-                    scan.nextLine();
-                    System.out.println("modify their money");
-                    double money = scan.nextDouble();
-                    scan.nextLine();
-                    System.out.println("modify their name");
-                    String name = scan.nextLine();
-                    System.out.println("modify their address");
-                    String address = scan.nextLine();
-                    System.out.println("modify their ban status");
-                    String ban = scan.next();
+                        suckerimpl.updateSucker(id, new Sucker(name, money, address, ban));
+                        System.out.println("this idiot is updated\n");
+                        break;
+                    }
+                    case (4): {
+                        System.out.println("please enter their ID to put them out of their misery.");
+                        int id = scan.nextInt();
+                        scan.nextLine();
+                        System.out.println(suckerimpl.deleteSucker(id) >0 ? "he has been freed\n":"user not found");
 
-                    suckerimpl.updateSucker(id,new Sucker(name,money,address,ban));
-                    System.out.println("this bidiot is updated\n");
-                    break;
-                } case (4):{
-                    System.out.println("please enter their ID to put them out of their misery.");
-                    int id = scan.nextInt();
-                    scan.nextLine();
-                    suckerimpl.deleteSucker(id);
-                    System.out.println("he has been freed\n");
-                    break;
-                } case (5):{
-                    System.out.println("please enter their id");
-                    int id = scan.nextInt();
-                    scan.nextLine();
-                    System.out.println("please enter their winning (negative number preferred)");
-                    double win = scan.nextInt();
-                    scan.nextLine();
-                    SuckerService s = suckerimpl.retrieveSucker(id);
-                    s.gainMoney(win);
-                    suckerimpl.updateSucker(id,s);
-                    System.out.println("completed\n");
-                    break;
+                        break;
+                    }
+                    case (5): {
+                        System.out.println("please enter their id");
+                        int id = scan.nextInt();
+                        scan.nextLine();
+
+                        if(suckerimpl.retrieveSucker(id).getId()==0){
+                            System.out.println("user does not exists");
+                            break;
+                        }
+                        System.out.println("please enter their winning (negative number preferred)");
+                        double win = scan.nextInt();
+                        scan.nextLine();
+                        SuckerService s = suckerimpl.retrieveSucker(id);
+                        s.gainMoney(win);
+                        suckerimpl.updateSucker(id, s);
+                        System.out.println("completed\n");
+                        break;
+                    }
                 }
             }
-        }while(loop);
-
-
+            catch (Exception E){
+                System.out.println("error occurred, selection terminated!");
+                scan.next();
+            }
+        } while (loop);
 
 
 
@@ -126,6 +142,22 @@ public class MainController {
 //            System.out.println("no good");
 //        System.out.println(studentImplobj.getAllStudents());
 //        //studentImplobj.deleteStudent(111113);
+
+
+    }
+
+    static boolean exists(int id){
+        SQLConnector sqlObj = new SQLConnector();
+        SQLConnector.dbConnection();
+
+        SuckerDaoImplementation suckerimpl = new SuckerDaoImplementation();
+        if(suckerimpl.retrieveSucker(id)!=null){
+            System.out.println("user does not exist");
+            return false;
+        }
+        else {
+            return true;
+        }
 
 
     }

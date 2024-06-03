@@ -35,7 +35,7 @@ public class SuckerService extends Sucker {
 
     public void gainMoney(double gain){
 
-        if (getBanned().equals("Y")){
+        if (getBanned().equalsIgnoreCase("Y")){
             System.out.println("user is banned!!");
             return;
         }
