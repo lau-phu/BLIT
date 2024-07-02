@@ -1,0 +1,31 @@
+name: CI/CD for React App
+
+on: 
+  push:
+  branches: [ master ]
+  
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with: 
+        node-version: 20
+
+    - name: Install Dependencies
+      run: npm install
+
+    - name: build project
+      run: npm run build
+
+    - name: deploy to github
+      uses: JamesIves/github-pages-deploy-action@v4
+      with: 
+        branch: gh-pages
+        folder: build_deploy
+  

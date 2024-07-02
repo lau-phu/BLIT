@@ -1,0 +1,67 @@
+/* footer component */
+.footer{
+    margin-top: 300px;
+    background-color: #0c27d1;
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer-text{
+    font-size: 0.9rem;
+}
+/* header component */
+.header{
+    background-color: #ff1010;
+    padding: 2rem;
+    text-align: center;
+}
+
+.header-text{
+    color:rgb(61, 24, 95);
+    font-size: 0.9rem;
+}
+
+.diary-grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .diary-grid > * {
+    flex-basis: 100%;
+  }
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch; /* make both boxes the same height */
+    margin-bottom: 20px; /* add some space between rows */
+  }
+  
+  .row:last-child {
+    margin-bottom: 0; /* remove margin from last row */
+  }
+  
+  .box1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px; /* add some padding to the box */
+    border: 1px solid #ddd; /* add a border to the box */
+    width: 30%; /* adjust the width to your liking */
+  }
+  
+  .box2 {
+    flex: 1; /* make box 2 take up the remaining space */
+    padding: 10px; /* add some padding to the box */
+    border: 1px solid #ddd; /* add a border to the box */
+  }
+  
+  .image {
+    width: 200px; /* adjust the width to your liking */
+    height: 150px; /* adjust the height to your liking */
+    margin-right: 10px;
+  }
+  
+  .name {
+    font-weight: bold;
+  }
