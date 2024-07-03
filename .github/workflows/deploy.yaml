@@ -17,11 +17,8 @@ jobs:
       with: 
         node-version: 20
 
-    - name: Install alert
-      run: npm install --save react-alert --force
-
     - name: Install Dependencies
-      run: npm install
+      run: npm install --force
 
     - name: build project
       run: npm run build
