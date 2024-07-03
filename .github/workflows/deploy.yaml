@@ -28,6 +28,8 @@ jobs:
 
     - name: build project
       run: CI='false' npm run build
+      env:
+        WELCOME: ${{vars.WELCOME}}
 
     - name: deploy to github
       uses: JamesIves/github-pages-deploy-action@v4
