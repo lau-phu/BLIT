@@ -1,0 +1,28 @@
+[
+{
+    "id": 5,
+    "name": "lorem",
+    "username": "lorem",
+    "password": "lorem",
+    "diaries": [
+        {
+            "id": 1,
+            "name": "lorem50",
+            "entry": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer justo lectus, maximus in imperdiet in, lobortis sit amet magna. Mauris nisl enim, facilisis at vulputate ut, tempus non ante",
+            "image": "booklogo.png"
+        },
+        {
+            "id": 2,
+            "name": "lorem20",
+            "entry": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer justo lectus, maximus in imperdiet in, lobortis sit amet magna.",
+            "image": "booklogo.png"
+        },
+        {
+            "id": 3,
+            "name": "lorem10",
+            "entry": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+            "image": "booklogo.png"
+        }
+    ]
+}
+]
