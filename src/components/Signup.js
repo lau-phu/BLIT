@@ -12,7 +12,7 @@ export default function Signup() {
   </form>
   <div id="error-message"></div>
 `;
-
+    //asdasds
     // Display the form
     document.body.innerHTML = form;
 
