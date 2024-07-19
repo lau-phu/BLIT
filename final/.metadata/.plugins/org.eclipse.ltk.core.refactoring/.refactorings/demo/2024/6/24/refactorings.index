@@ -1,0 +1,38 @@
+1718132107556	Delete element
+1718132262300	Rename type 'writerDAO'
+1718132276701	Rename type 'writerService'
+1718132290516	Rename type 'diary'
+1718132305356	Rename type 'controller'
+1718132712384	Rename type 'WriterService'
+1718132723059	Rename type 'WriterServiceImpl'
+1718132734566	Rename type 'DiartServiceImpl'
+1718132815410	Copy compilation unit
+1718132929042	Copy compilation unit
+1718132983655	Delete elements
+1718133048881	Copy compilation unit
+1718133059797	Delete element
+1718133356706	Copy compilation unit
+1718133734839	Rename type 'Snippet'
+1718203942825	Rename package 'com.example.impl'
+1718203972047	Copy package
+1718203981160	Delete elements
+1718203986579	Delete elements
+1718204189304	Rename package 'com.example.controller'
+1718204253676	Rename package 'com.example.demo.controller'
+1718204339886	Copy packages
+1718204369772	Delete elements
+1718204840898	Rename package 'com.example.service.impl'
+1718204845585	Delete element
+1718208224792	Rename type 'diaryDao'
+1718208236554	Rename type 'writerDao'
+1718208253691	Rename type 'diaryRepository'
+1718208262394	Rename type 'writerRepository'
+1718217261476	Rename field 'series'
+1718293427855	Rename type 'Diary'
+1718293527140	Rename type 'Diary2'
+1718300482909	Copy compilation unit
+1718345735369	Rename type 'StuffException'
+1718393885113	Rename type 'Random_5_Digit'
+1718393898798	Rename type 'RandomizeField'
+1718393992835	Rename type 'RandomDigits'
+1718394017626	Rename type 'randomDigits'

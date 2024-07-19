@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="jakarta"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="true"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="jakarta"/>
+			<item value="jarka"/>
+			<item value="eureka"/>
+			<item value="void"/>
+			<item value="contactRepository"/>
+			<item value="*"/>
+			<item value="starter-we"/>
+			<item value="web"/>
+			<item value="save"/>
+			<item value="Customer"/>
+			<item value="customer"/>
+			<item value="Product"/>
+			<item value="product"/>
+			<item value="writer"/>
+			<item value="Writer"/>
+		</list>
+		<list key="replacehistory">
+			<item value="Writer"/>
+			<item value="writer"/>
+			<item value="Diary"/>
+			<item value="diary"/>
+			<item value="DeleteM"/>
+			<item value="PostM"/>
+			<item value="AYYYYM"/>
+			<item value="PutM"/>
+			<item value="GetM"/>
+			<item value="diary."/>
+			<item value="d."/>
+			<item value="d"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="9"/>
+		<item key="DIALOG_Y_ORIGIN" value="216"/>
+		<item key="DIALOG_WIDTH" value="414"/>
+		<item key="DIALOG_HEIGHT" value="454"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

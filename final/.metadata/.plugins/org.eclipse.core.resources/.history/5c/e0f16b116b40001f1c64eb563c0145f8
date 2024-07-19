@@ -1,0 +1,21 @@
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.actuate.info.InfoContributor;
+import org.springframework.boot.actuate.info.Info;
+import org.springframework.boot.actuate.info.Info.Builder;
+
+@Configuration
+public class ActuatorConfig {
+
+    @Bean
+    public InfoContributor customInfoContributor() {
+        return new InfoContributor() {
+            @Override
+            public void contribute(Builder builder) {
+                builder.withDetail("app", "E-Commerce")
+                       .withDetail("version", "1.0.0")
+                       .withDetail("description", "This is a group project");
+            }
+        };
+    }
+}
